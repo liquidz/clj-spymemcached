@@ -5,23 +5,23 @@
 (memcached!)
 
 (deftest set-get-test
-  (cache-set "a" "b" 1)
+  (cache-set "a" "b" :expiration 1)
   (is (= "b" (cache-get "a")))
 
   (Thread/sleep 1000)
 
   (is (nil? (cache-get "a")))
-  (is (= "default" (cache-get "a" "default"))))
+  (is (= "default" (cache-get "a" :default "default"))))
 
 
 (deftest set-get-keyword-test
-  (cache-set :a "b" 1)
+  (cache-set :a "b" :expiration 1)
   (is (= "b" (cache-get :a)))
 
   (Thread/sleep 1000)
 
   (is (nil? (cache-get :a)))
-  (is (= "default" (cache-get :a "default"))))
+  (is (= "default" (cache-get :a :default "default"))))
 
 
 (deftest set-get-object-test

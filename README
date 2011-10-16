@@ -6,9 +6,9 @@ simple spymemcached wrapper
 
     (memcached! :host "localhost" :port 11211)
 	(cache-set :hello "world")
-	(cache-get :hello "default value")
+	(cache-get :hello :default "default value")
 
-	(cache-set :ls '(1 2 3 4) 3600)
+	(cache-set :ls '(1 2 3 4) :expiration 3600)
 	(= 1 (first (cache-get :ls)))
 
 	(cache-set :map {:a 1 :b 2})
