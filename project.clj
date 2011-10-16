@@ -1,4 +1,4 @@
-(defproject clj-spymemcached "1.0.0"
+(defproject clj-spymemcached "1.0.1"
   :description "simple spymemcached wrapper"
   :repositories {"spy" "http://files.couchbase.com/maven2/"}
   :dependencies [[org.clojure/clojure "1.3.0"]
