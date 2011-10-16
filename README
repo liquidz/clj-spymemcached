@@ -1,0 +1,21 @@
+# clj-spymemcached
+
+simple spymemcached wrapper
+
+## Usage
+
+    (memcached! :host "localhost" :port 11211)
+	(cache-set :hello "world")
+	(cache-get :hello "default value")
+
+	(cache-set :ls '(1 2 3 4) 3600)
+	(= 1 (first (cache-get :ls)))
+
+	(cache-set :map {:a 1 :b 2})
+	(= 2 (:b (cache-get :map)))
+
+## License
+
+Copyright (C) 2011 uochan
+
+Distributed under the Eclipse Public License, the same as Clojure.
